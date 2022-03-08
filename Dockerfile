@@ -23,6 +23,7 @@ RUN export ARCH=`dpkg --print-architecture` \
     && rm jacktrip.tgz \
     && install -m 755 ./jacktrip "/usr/local/bin"
 
+COPY audio.conf /etc/security/limits.d/audio.conf
 COPY entrypoint.sh /sbin/entrypoint.sh
 
 RUN chmod +x /sbin/entrypoint.sh
